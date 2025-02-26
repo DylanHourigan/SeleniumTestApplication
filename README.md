@@ -3,6 +3,7 @@
 This project demonstrates the implementation of **Testcontainers** and **Selenium** in a Java REST API application. It
 was created to be used as a learning resource to explore the integration of these tools in a Spring-based
 environment.
+
 ---
 
 ## Features
