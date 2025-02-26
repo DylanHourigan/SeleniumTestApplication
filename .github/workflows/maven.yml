@@ -10,13 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
-    # Set up Docker service for Testcontainers
-    services:
-      docker:
-        image: docker:dind
-        privileged: true
-        options: --network=host
-    
     steps:
       - uses: actions/checkout@v4
 
@@ -26,6 +19,9 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+
+      - name: Docker info
+        run: docker info
 
       - name: Build and test with Maven
         run: mvn -B package --file pom.xml
