@@ -50,7 +50,10 @@ public class EmployeeApiSeleniumTest {
     @Test
     void testCreateEmployee() {
         // Must use host.docker.internal instead of localhost because the test is run within a container
-        String appUrl = "http://host.docker.internal:" + port + "/employees";
+        boolean isGitHubActions = System.getenv("GITHUB_ACTIONS") != null;
+
+        String hostname = isGitHubActions ? "172.17.0.1" : "host.docker.internal";
+        String appUrl = "http://" + hostname + ":" + port + "/employees";
 
         driver.get(appUrl);
 
