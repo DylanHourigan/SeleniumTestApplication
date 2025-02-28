@@ -1,4 +1,4 @@
-package com.example.seleniumdemo.service;
+package com.example.employeeApi.service;
 
 import com.example.seleniumdemo.model.Employee;
 import com.example.seleniumdemo.repository.EmployeeRepository;

@@ -1,4 +1,4 @@
-package com.example.seleniumdemo.controller;
+package com.example.employeeApi.controller;
 
 import com.example.seleniumdemo.model.Employee;
 import com.example.seleniumdemo.service.EmployeeService;
