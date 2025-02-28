@@ -1,10 +1,10 @@
-package com.example.seleniumdemo;
+package com.example.employee-api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SeleniumDemoApplication {
+public class employeeApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(SeleniumDemoApplication.class, args);
     }
