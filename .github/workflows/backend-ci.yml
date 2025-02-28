@@ -35,7 +35,7 @@ jobs:
 
       - name: Build and test with Maven
         run: mvn -B package --file backend/pom.xml
-        working-directory: ../../backend
+        working-directory: ./backend
 
       - name: Publish Test Results
         if: always()
