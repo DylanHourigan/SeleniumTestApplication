@@ -4,12 +4,12 @@ on:
   push:
     branches: [ "master" ]
     paths:
-      - '../../backend2/**'
+      - '../../backend/**'
       - '.github/workflows/backend-ci.yml'
   pull_request:
     branches: [ "master" ]
     paths:
-      - '../../backend2/**'
+      - '../../backend/**'
       - '.github/workflows/backend-ci.yml'
 
 permissions:
@@ -35,7 +35,7 @@ jobs:
 
       - name: Build and test with Maven
         run: mvn -B package --file backend/pom.xml
-        working-directory: ./backend
+        working-directory: ../../backend
 
       - name: Publish Test Results
         if: always()
