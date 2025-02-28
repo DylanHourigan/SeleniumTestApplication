@@ -4,12 +4,12 @@ on:
   push:
     branches: [ "master" ]
     paths:
-      - '../../backend/**'
+      - 'backend/**'
       - '.github/workflows/backend-ci.yml'
   pull_request:
     branches: [ "master" ]
     paths:
-      - '../../backend/**'
+      - 'backend/**'
       - '.github/workflows/backend-ci.yml'
 
 permissions:
@@ -34,7 +34,7 @@ jobs:
         run: docker info
 
       - name: Build and test with Maven
-        run: mvn -B package --file backend/pom.xml
+        run: mvn -B package
         working-directory: ./backend
 
       - name: Publish Test Results
