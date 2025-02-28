@@ -1,14 +1,13 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:17-jdk-slim
-
-# Set the working directory inside the container
+# Build stage
+FROM maven:3.8-openjdk-17 AS build
 WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package -DskipTests
 
-# Copy the built application JAR file into the container
-COPY target/SeleniumDemo-0.0.1-SNAPSHOT.jar app.jar
-
-# Expose the application port
+# Run stage
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY --from=build /app/target/SeleniumDemo-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
-
-# Run the application
 CMD ["java", "-jar", "app.jar"]

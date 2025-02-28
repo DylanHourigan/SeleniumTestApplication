@@ -1,7 +1,7 @@
 package com.example.employeeApi.service;
 
-import com.example.seleniumdemo.model.Employee;
-import com.example.seleniumdemo.repository.EmployeeRepository;
+import com.example.employeeApi.model.Employee;
+import com.example.employeeApi.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
