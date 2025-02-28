@@ -1,4 +1,4 @@
-package com.example.seleniumdemo;
+package com.example.employeeApi;
 
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
