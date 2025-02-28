@@ -1,4 +1,4 @@
-package com.example.seleniumdemo.model;
+package com.example.employeeApi.model;
 
 import jakarta.persistence.*;
 import lombok.*;

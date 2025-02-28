@@ -1,7 +1,7 @@
-package com.example.seleniumdemo.controller;
+package com.example.employeeApi.controller;
 
-import com.example.seleniumdemo.model.Employee;
-import com.example.seleniumdemo.service.EmployeeService;
+import com.example.employeeApi.model.Employee;
+import com.example.employeeApi.service.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

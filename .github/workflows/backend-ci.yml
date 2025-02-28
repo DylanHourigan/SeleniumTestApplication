@@ -1,10 +1,16 @@
-name: Java CI with Maven
+name: Backend CI with Maven
 
 on:
   push:
     branches: [ "master" ]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend-ci.yml'
   pull_request:
     branches: [ "master" ]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend-ci.yml'
 
 permissions:
   contents: read
@@ -13,7 +19,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v4
 
@@ -28,13 +34,14 @@ jobs:
         run: docker info
 
       - name: Build and test with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn -B package
+        working-directory: ./backend
 
       - name: Publish Test Results
         if: always()
         uses: dorny/test-reporter@v1
         with:
-          name: JUnit Tests
-          path: target/surefire-reports/*.xml
+          name: Backend JUnit Tests
+          path: backend/target/surefire-reports/*.xml
           reporter: java-junit
           fail-on-error: true
